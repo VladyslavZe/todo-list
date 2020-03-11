@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace todo_list.Controllers
+namespace TodoList.Controllers
 {
     [Authorize]
     [ApiController]

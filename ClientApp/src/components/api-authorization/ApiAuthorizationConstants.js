@@ -1,4 +1,4 @@
-export const ApplicationName = 'todo_list';
+export const ApplicationName = 'TodoList';
 
 export const QueryParameterNames = {
   ReturnUrl: 'returnUrl',

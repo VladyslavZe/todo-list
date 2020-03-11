@@ -3129,11 +3129,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/intern/Documents/todo-list/todo-list.csproj",
-      "projectName": "todo-list",
-      "projectPath": "/home/intern/Documents/todo-list/todo-list.csproj",
+      "projectUniqueName": "/home/intern/Documents/TodoList/TodoList.csproj",
+      "projectName": "TodoList",
+      "projectPath": "/home/intern/Documents/TodoList/TodoList.csproj",
       "packagesPath": "/home/intern/.nuget/packages/",
-      "outputPath": "/home/intern/Documents/todo-list/obj/",
+      "outputPath": "/home/intern/Documents/TodoList/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

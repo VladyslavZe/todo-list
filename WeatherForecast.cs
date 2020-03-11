@@ -1,6 +1,6 @@
 using System;
 
-namespace todo_list
+namespace TodoList
 {
     public class WeatherForecast
     {
