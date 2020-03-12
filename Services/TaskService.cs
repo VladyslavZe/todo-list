@@ -5,7 +5,6 @@ namespace TodoList.Services
 {
   public class TaskService
   {
-
     private ApplicationDbContext _context;
 
     public TaskService(ApplicationDbContext context)

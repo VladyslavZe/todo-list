@@ -1,11 +1,14 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TodoList.Services;
+using TodoList.Models;
 
 namespace TodoList.Controllers
 {
   [Route("tasks")]
   public class TaskController : ControllerBase
   {
+    private const string str = "null";
     private readonly TaskService _taskService;
     public TaskController(TaskService taskService)
     {
@@ -13,11 +16,9 @@ namespace TodoList.Controllers
     }
 
     [HttpGet("")]
-    public string[] GetTasks()
+    public string GetTasks()
     {
-      return null;
+      return str;
     }
-
-
   }
 }

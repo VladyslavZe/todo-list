@@ -11,6 +11,7 @@ using TodoList.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TodoList.Services;
 
 namespace TodoList
 {
@@ -47,6 +48,8 @@ namespace TodoList
       {
         configuration.RootPath = "ClientApp/build";
       });
+
+      services.AddScoped<TaskService, TaskService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
