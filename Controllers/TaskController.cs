@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TodoList.Services;
 using TodoList.Models;
+using System.Linq;
 
 namespace TodoList.Controllers
 {
@@ -9,8 +10,6 @@ namespace TodoList.Controllers
   [ApiController]
   public class TaskController : ControllerBase
   {
-    private const string str = "null";
-    private string UserId = "1";
     private readonly TaskService _taskService;
     public TaskController(TaskService taskService)
     {
@@ -20,15 +19,19 @@ namespace TodoList.Controllers
     [HttpGet("")]
     public List<Task> GetTasks()
     {
-      return _taskService.GetTasks();
+      return _taskService.Get();
     }
 
-    // POST api/tasks/
     [HttpPost("")]
-    public Task PostTask(Task task)
+    public Task CreateTask(Task task)
     {
-      task.UserId = UserId;
       return _taskService.Create(task);
+    }
+
+    [HttpDelete("")]
+    public void DeleteTasks()
+    {
+      _taskService.DeleteAll();
     }
   }
 }
