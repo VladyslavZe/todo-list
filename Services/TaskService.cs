@@ -32,12 +32,20 @@ namespace TodoList.Services
       _context.SaveChanges();
     }
 
-    public List<Task> GetById(int id)
+    public Task GetById(int id)
     {
-      // if() {
-      //   return throw new ExceptionGetById("Такого таска нету");
-      // }
-      return _context.Tasks.Where(obj => obj.Id == id).ToList();
+      return _context.Tasks.FirstOrDefault(obj => obj.Id == id);
+    }
+
+
+    public void DeleteById(int id)
+    {
+      _context.Tasks.Remove(GetById(id));
+      _context.SaveChanges();
+    }
+
+    public void Put(int id)
+    {
     }
   }
 }

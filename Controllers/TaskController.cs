@@ -35,16 +35,25 @@ namespace TodoList.Controllers
     }
 
     [HttpGet("{id}")]
-    public List<Task> GetTaskById(int id)
+    public ActionResult GetTaskById(int id)
     {
-      // try
-      // {
-      return _taskService.GetById(id);
-      // }
-      // catch (ExceptionGetById m)
-      // {
-      // return NotFound();
-      // }
+      if (_taskService.GetById(id) == null)
+      {
+        return NotFound();
+      }
+      return Ok(_taskService.GetById(id));
+    }
+
+    [HttpDelete("{id}")]
+    public void DeleteTaskById(int id)
+    {
+      _taskService.DeleteById(id);
+    }
+
+    [HttpPut("{id}")]
+    public void PutTask(int id)
+    {
+      _taskService.Put(id);
     }
   }
 }
