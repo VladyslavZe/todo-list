@@ -6,9 +6,11 @@ using TodoList.Models;
 namespace TodoList.Controllers
 {
   [Route("tasks")]
+  [ApiController]
   public class TaskController : ControllerBase
   {
     private const string str = "null";
+    private string UserId = "1";
     private readonly TaskService _taskService;
     public TaskController(TaskService taskService)
     {
@@ -16,9 +18,17 @@ namespace TodoList.Controllers
     }
 
     [HttpGet("")]
-    public string GetTasks()
+    public List<Task> GetTasks()
     {
-      return str;
+      return _taskService.GetTasks();
+    }
+
+    // POST api/tasks/
+    [HttpPost("")]
+    public Task PostTask(Task task)
+    {
+      task.UserId = UserId;
+      return _taskService.Create(task);
     }
   }
 }
