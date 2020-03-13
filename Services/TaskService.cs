@@ -28,12 +28,18 @@ namespace TodoList.Services
 
     public void DeleteAll()
     {
+
+      // foreach (var task in Get())
+      // {
+      //   _context.Tasks.Remove(task);
+      // }
       _context.Tasks.RemoveRange(_context.Tasks.ToList());
       _context.SaveChanges();
     }
 
     public Task GetById(int id)
     {
+      //на файнд
       return _context.Tasks.FirstOrDefault(obj => obj.Id == id);
     }
 

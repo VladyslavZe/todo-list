@@ -37,11 +37,12 @@ namespace TodoList.Controllers
     [HttpGet("{id}")]
     public ActionResult GetTaskById(int id)
     {
-      if (_taskService.GetById(id) == null)
+      Task taskId = _taskService.GetById(id);
+      if (taskId == null)
       {
         return NotFound();
       }
-      return Ok(_taskService.GetById(id));
+      return Ok(taskId);
     }
 
     [HttpDelete("{id}")]
