@@ -17,6 +17,5 @@ namespace TodoList.Models
     public string Name { get; set; }
     public bool Done { get; set; }
 
-    public string UserId { get; set; }
   }
 }

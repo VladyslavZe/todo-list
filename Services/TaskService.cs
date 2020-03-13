@@ -21,9 +21,15 @@ namespace TodoList.Services
       return task;
     }
 
-    public List<Task> GetTasks()
+    public List<Task> Get()
     {
       return _context.Tasks.ToList();
+    }
+
+    public void DeleteAll()
+    {
+      _context.Tasks.RemoveRange(_context.Tasks.ToList());
+      _context.SaveChanges();
     }
   }
 }
