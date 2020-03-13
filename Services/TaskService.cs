@@ -44,8 +44,13 @@ namespace TodoList.Services
       _context.SaveChanges();
     }
 
-    public void Put(int id)
+    public void Put(int id, Task task)
     {
+      Task t = GetById(id);
+      t.Id = id;
+      t.Name = task.Name;
+      t.Done = task.Done;
+      _context.SaveChanges();
     }
   }
 }

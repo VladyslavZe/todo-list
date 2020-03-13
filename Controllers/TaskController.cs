@@ -16,19 +16,19 @@ namespace TodoList.Controllers
       this._taskService = taskService;
     }
 
-    [HttpPost("")]
+    [HttpPost]
     public Task CreateTask(Task task)
     {
       return _taskService.Create(task);
     }
 
-    [HttpGet("")]
+    [HttpGet]
     public List<Task> GetTasks()
     {
       return _taskService.Get();
     }
 
-    [HttpDelete("")]
+    [HttpDelete]
     public void DeleteTasks()
     {
       _taskService.DeleteAll();
@@ -51,9 +51,9 @@ namespace TodoList.Controllers
     }
 
     [HttpPut("{id}")]
-    public void PutTask(int id)
+    public void PutTask(int id, Task task)
     {
-      _taskService.Put(id);
+      _taskService.Put(id, task);
     }
   }
 }
