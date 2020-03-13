@@ -39,8 +39,7 @@ namespace TodoList.Services
 
     public Task GetById(int id)
     {
-      //на файнд
-      return _context.Tasks.FirstOrDefault(obj => obj.Id == id);
+      return _context.Tasks.Find(id);
     }
 
 
