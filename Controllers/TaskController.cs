@@ -16,22 +16,35 @@ namespace TodoList.Controllers
       this._taskService = taskService;
     }
 
-    [HttpGet("")]
-    public List<Task> GetTasks()
-    {
-      return _taskService.Get();
-    }
-
     [HttpPost("")]
     public Task CreateTask(Task task)
     {
       return _taskService.Create(task);
     }
 
+    [HttpGet("")]
+    public List<Task> GetTasks()
+    {
+      return _taskService.Get();
+    }
+
     [HttpDelete("")]
     public void DeleteTasks()
     {
       _taskService.DeleteAll();
+    }
+
+    [HttpGet("{id}")]
+    public List<Task> GetTaskById(int id)
+    {
+      // try
+      // {
+      return _taskService.GetById(id);
+      // }
+      // catch (ExceptionGetById m)
+      // {
+      // return NotFound();
+      // }
     }
   }
 }

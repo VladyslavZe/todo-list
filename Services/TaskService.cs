@@ -31,5 +31,13 @@ namespace TodoList.Services
       _context.Tasks.RemoveRange(_context.Tasks.ToList());
       _context.SaveChanges();
     }
+
+    public List<Task> GetById(int id)
+    {
+      // if() {
+      //   return throw new ExceptionGetById("Такого таска нету");
+      // }
+      return _context.Tasks.Where(obj => obj.Id == id).ToList();
+    }
   }
 }
